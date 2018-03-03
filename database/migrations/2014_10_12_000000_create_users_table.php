@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->boolean('is_paying_customer');
             $table->boolean('is_super_admin');
             $table->string('image');
-            $table->string('password', 60);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -15,13 +15,17 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('image');
-            $table->string('text');
-            $table->integer('phone_number')->unique();
-            $table->boolean('is_admin');
-            $table->boolean('is_super_admin');
-            $table->string('image');
-            $table->string('password', 60);
+            $table->integer('status');
+            $table->string('image_1');
+            $table->string('image_2');
+            $table->string('image_3');
+            $table->string('image_4');
+            $table->string('image_5');
+            $table->string('text_1');
+            $table->string('text_2');
+            $table->string('text_3');
+            $table->string('text_4');
+            $table->string('text_5');
             $table->rememberToken();
             $table->timestamps();
         });
