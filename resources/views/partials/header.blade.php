@@ -1,12 +1,12 @@
 <nav id="menu" style="" class="navbar {{-- navbar-fixed-top --}}">
 	<div class="navbar-header">
 		@if (Auth::check())
-			<a class="navbar-brand user navLink" {{-- href="{{action('UsersController@show' , Auth::id())}}" --}} >
+			<a class="navbar-brand user navLink" href="{{action('UsersController@show' , Auth::id())}}" >
 				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 				{{Auth::user()->name}}
 			</a>
 		@else
-			<a class="navbar-brand user navLink" {{-- href="{{action('Auth\AuthController@getLogin')}}" --}}><span class="navLink">Login / Register</span>
+			<a class="navbar-brand user navLink" href="{{action('Auth\AuthController@getRegister')}}"><span class="navLink">Login / Register</span>
 			</a>	
 		@endif
 		<button style="border:1px solid #337ab7" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >

@@ -28,6 +28,10 @@ class AuthController extends Controller
      *
      * @return void
      */
+
+    protected $redirectPath = "/idols";
+    protected $redirectAfterLogout = "/idols";
+
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
@@ -45,6 +49,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+            'phone_number'=>'required|min:10|integer'
         ]);
     }
 
@@ -57,9 +62,13 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
             'email' => $data['email'],
+            'username'=>$data['username'],
             'password' => bcrypt($data['password']),
+            'phone_number'=> $data['phone_number'],
+
+
+
         ]);
     }
 }
